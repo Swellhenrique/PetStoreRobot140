@@ -7,7 +7,9 @@ Test Template    Executar Post User Dinamico
 
 *** Test Cases ***
 
-Post User Dinamico
+TC001     ${id}    ${username}    ${firstName}    ${lastName}    ${email}    ${password}    ${phone}    ${userStatus}
+TC002     ${id}    ${username}    ${firstName}    ${lastName}    ${email}    ${password}    ${phone}    ${userStatus}
+TC003     ${id}    ${username}    ${firstName}    ${lastName}    ${email}    ${password}    ${phone}    ${userStatus}
 
 
 *** Keywords ***
