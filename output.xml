@@ -1,208 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-23T15:48:54.259422" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Store" source="C:\iterasys01\PetStoreRobot140\__tests__\test_store.robot">
-<test id="s1-t1" name="Post Order" line="18">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-23T15:48:54.397044" level="INFO">${body} = {'id': '1213', 'petId': '12450899002', 'quantity': '1', 'shipDate': '2026-06-10T23:15:00.732Z', 'status': 'delivered', 'complete': 'true'}</msg>
-<var>${body}</var>
-<arg>id=${id}</arg>
-<arg>petId=${petId}</arg>
-<arg>quantity=${quantity}</arg>
-<arg>shipDate=${shipDate}</arg>
-<arg>status=${status}</arg>
-<arg>complete=${complete}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-23T15:48:54.396395" elapsed="0.000685"/>
-</kw>
-<kw name="POST" owner="RequestsLibrary">
-<msg time="2026-06-23T15:48:55.255714" level="INFO">POST Request : url=https://petstore.swagger.io/v2/store/order 
- path_url=/v2/store/order 
- headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '138', 'Content-Type': 'application/json'} 
- body=b'{"id": "1213", "petId": "12450899002", "quantity": "1", "shipDate": "2026-06-10T23:15:00.732Z", "status": "delivered", "complete": "true"}' 
- </msg>
-<msg time="2026-06-23T15:48:55.255906" level="INFO">POST Response : url=https://petstore.swagger.io/v2/store/order 
- status=200, reason=OK 
- headers={'Date': 'Tue, 23 Jun 2026 18:48:55 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
- body={"id":1213,"petId":12450899002,"quantity":1,"shipDate":"2026-06-10T23:15:00.732+0000","status":"delivered","complete":true} 
- </msg>
-<msg time="2026-06-23T15:48:55.256057" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>url=${url}/order</arg>
-<arg>json=${body}</arg>
-<doc>Sends a POST request.</doc>
-<status status="PASS" start="2026-06-23T15:48:54.397281" elapsed="0.858803"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-06-23T15:48:55.257007" level="INFO">${response_body} = {'id': 1213, 'petId': 12450899002, 'quantity': 1, 'shipDate': '2026-06-10T23:15:00.732+0000', 'status': 'delivered', 'complete': True}</msg>
-<var>${response_body}</var>
-<arg>${response.json()}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-06-23T15:48:55.256394" elapsed="0.000635"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${response_body}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-06-23T15:48:55.257211" elapsed="0.000316"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-06-23T15:48:55.257700" elapsed="0.000103"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[id]</arg>
-<arg>${{int($id)}}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:55.257977" elapsed="0.000524"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[petId]</arg>
-<arg>${{int($petId)}}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:55.258656" elapsed="0.000464"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[status]</arg>
-<arg>${status}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:55.259248" elapsed="0.000222"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[complete]</arg>
-<arg>${True}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:55.259587" elapsed="0.000195"/>
-</kw>
-<status status="PASS" start="2026-06-23T15:48:54.395629" elapsed="0.864358"/>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-30T16:16:08.507855" rpa="false" schemaversion="5">
+<suite id="s1" name="Test User Dinamico" source="C:\iterasys01\PetStoreRobot140\__tests__\test_user_dinamico.robot">
+<test id="s1-t1" name="Post User Dinamico" line="10">
+<status status="FAIL" start="2026-06-30T16:16:08.662822" elapsed="0.000819">Test cannot be empty.</status>
 </test>
-<test id="s1-t2" name="Get Order" line="34">
-<kw name="GET" owner="RequestsLibrary">
-<msg time="2026-06-23T15:48:56.077234" level="INFO">GET Request : url=https://petstore.swagger.io/v2/store/order/1213 
- path_url=/v2/store/order/1213 
- headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2026-06-23T15:48:56.077324" level="INFO">GET Response : url=https://petstore.swagger.io/v2/store/order/1213 
- status=200, reason=OK 
- headers={'Date': 'Tue, 23 Jun 2026 18:48:55 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
- body={"id":1213,"petId":12450899002,"quantity":1,"shipDate":"2026-06-10T23:15:00.732+0000","status":"delivered","complete":true} 
- </msg>
-<msg time="2026-06-23T15:48:56.078433" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>url=${url}/order/${id}</arg>
-<doc>Sends a GET request.</doc>
-<status status="PASS" start="2026-06-23T15:48:55.260583" elapsed="0.817885"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-06-23T15:48:56.079291" level="INFO">${response_body} = {'id': 1213, 'petId': 12450899002, 'quantity': 1, 'shipDate': '2026-06-10T23:15:00.732+0000', 'status': 'delivered', 'complete': True}</msg>
-<var>${response_body}</var>
-<arg>${response.json()}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.078730" elapsed="0.000582"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${response_body}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.079520" elapsed="0.000342"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.080046" elapsed="0.000108"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[id]</arg>
-<arg>${{int($id)}}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.080314" elapsed="0.000632"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[petId]</arg>
-<arg>${{int($petId)}}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.081081" elapsed="0.000423"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[status]</arg>
-<arg>${status}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.081633" elapsed="0.000203"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[complete]</arg>
-<arg>${True}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.081950" elapsed="0.000191"/>
-</kw>
-<status status="PASS" start="2026-06-23T15:48:55.260309" elapsed="0.821965"/>
-</test>
-<test id="s1-t3" name="DeLete Order" line="47">
-<kw name="DELETE" owner="RequestsLibrary">
-<msg time="2026-06-23T15:48:56.898253" level="INFO">DELETE Request : url=https://petstore.swagger.io/v2/store/order/1213 
- path_url=/v2/store/order/1213 
- headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
- body=None 
- </msg>
-<msg time="2026-06-23T15:48:56.898335" level="INFO">DELETE Response : url=https://petstore.swagger.io/v2/store/order/1213 
- status=200, reason=OK 
- headers={'Date': 'Tue, 23 Jun 2026 18:48:56 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
- body={"code":200,"type":"unknown","message":"1213"} 
- </msg>
-<msg time="2026-06-23T15:48:56.898463" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>url=${url}/order/${id}</arg>
-<doc>Sends a DELETE request.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.082842" elapsed="0.815642"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-06-23T15:48:56.899273" level="INFO">${response_body} = {'code': 200, 'type': 'unknown', 'message': '1213'}</msg>
-<var>${response_body}</var>
-<arg>${response.json()}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.898729" elapsed="0.000564"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${response_body}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.899488" elapsed="0.000363"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.900115" elapsed="0.000095"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[code]</arg>
-<arg>${{int(200)}}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.900335" elapsed="0.000430"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[type]</arg>
-<arg>unknown</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.900917" elapsed="0.000207"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[message]</arg>
-<arg>${id}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-23T15:48:56.901251" elapsed="0.000213"/>
-</kw>
-<status status="PASS" start="2026-06-23T15:48:56.082594" elapsed="0.818997"/>
-</test>
-<status status="PASS" start="2026-06-23T15:48:54.260777" elapsed="2.641287"/>
+<status status="FAIL" start="2026-06-30T16:16:08.509228" elapsed="0.154855"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Test Store" id="s1" pass="3" fail="0" skip="0">Test Store</stat>
+<stat name="Test User Dinamico" id="s1" pass="0" fail="1" skip="0">Test User Dinamico</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-06-30T16:16:08.660419" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\iterasys01\PetStoreRobot140\__tests__\test_user_dinamico.robot", line 0</msg>
+<msg time="2026-06-30T16:16:08.660528" level="ERROR">In source file:
+  File "C:\iterasys01\PetStoreRobot140\__tests__\..\fixtures\json\csv\users.csv", line 0</msg>
+<msg time="2026-06-30T16:16:08.662568" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: ValueError: Unassigned requiered argument detected: ${id}.</msg>
 </errors>
 </robot>

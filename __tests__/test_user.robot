@@ -4,6 +4,7 @@ Variables    ../resources/variables.py
 
 
 
+
 *** Test Cases ***
 
 Post User
@@ -17,7 +18,7 @@ Post User
     Status Should Be    200
     Should Be Equal    ${response_body}[code]        ${{int(200)}}
     Should Be Equal    ${response_body}[type]        unknown
-    Should Be Equal    ${response_body}[message]     ${id}
+    Should Be Equal    ${response_body}[message]     ${{str($id)}}
 
 
 Get User
@@ -45,7 +46,7 @@ Put User
     Status Should Be    200
     Should Be Equal    ${response_body}[code]        ${{int(200)}}
     Should Be Equal    ${response_body}[type]        unknown
-    Should Be Equal    ${response_body}[message]     ${id}
+    Should Be Equal    ${response_body}[message]     ${{str($id)}}
 
 
 
@@ -61,5 +62,6 @@ Delete User
     Should Be Equal    ${response_body}[code]        ${{int(200)}}
     Should Be Equal    ${response_body}[type]        unknown
     Should Be Equal    ${response_body}[message]     ${username}
+
 
 
